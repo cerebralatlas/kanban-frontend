@@ -1,2 +1,62 @@
 @import './base.css';
 
+/* 全局样式增强 */
+body {
+  @apply font-sans text-gray-900 bg-gray-50;
+}
+
+/* 全局滚动条样式 */
+::-webkit-scrollbar {
+  @apply w-1.5 h-1.5;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400 transition-colors;
+}
+
+/* 链接样式 */
+a {
+  @apply text-green-600 hover:text-green-700 transition-colors;
+}
+
+/* Naive UI 组件样式增强 */
+.n-button {
+  @apply transition-all duration-200;
+}
+
+.n-input {
+  @apply transition-all duration-200;
+}
+
+.n-card {
+  @apply transition-all duration-200;
+}
+
+.n-form-item {
+  @apply mb-4;
+}
+
+/* 自定义工具类 */
+.glass-effect {
+  @apply bg-white/95 backdrop-blur-sm;
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-blue-500 to-purple-600;
+}
+
+.green-gradient {
+  @apply bg-gradient-to-br from-green-500 to-green-600;
+}
+
+.shadow-soft {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-strong {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
