@@ -33,7 +33,7 @@
   pnpm add -D @types/node vitest jsdom @vue/test-utils
   ```
 
-- [ ] **安装Naive UI组件库**
+- [x] **安装Naive UI组件库**
 
   ```bash
   pnpm add naive-ui
@@ -41,14 +41,14 @@
   pnpm add vfonts
   ```
 
-- [ ] **安装样式相关**
+- [x] **安装样式相关**
 
   ```bash
   pnpm add tailwindcss @tailwindcss/forms @tailwindcss/typography
   pnpm add -D autoprefixer postcss
   ```
 
-- [ ] **安装拖拽库**
+- [x] **安装拖拽库**
 
   ```bash
   pnpm add vuedraggable@next
@@ -57,19 +57,19 @@
 ### ⚙️ 基础配置
 
 - [ ] **Tailwind CSS 配置**
-  - [ ] 创建 `tailwind.config.js`
-  - [ ] 配置 PostCSS
-  - [ ] 设置基础样式变量
+  - [x] 创建 `tailwind.config.js`
+  - [x] 配置 PostCSS
+  - [x] 设置基础样式变量
 
 - [ ] **Vite 配置优化**
-  - [ ] 配置路径别名 (`@/` -> `src/`)
-  - [ ] 配置环境变量
-  - [ ] 配置代理转发到后端
+  - [x] 配置路径别名 (`@/` -> `src/`)
+  - [x] 配置环境变量
+  - [x] 配置代理转发到后端
 
 - [ ] **TypeScript 配置增强**
-  - [ ] 配置严格模式
-  - [ ] 配置路径映射
-  - [ ] 添加全局类型声明
+  - [x] 配置严格模式
+  - [x] 配置路径映射
+  - [x] 添加全局类型声明
 
 ### 🗂 项目结构创建
 

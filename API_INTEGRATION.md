@@ -5,6 +5,7 @@
 ## 📡 后端API概览
 
 ### 基础信息
+
 - **后端地址**: `http://localhost:3000`
 - **API文档**: `http://localhost:3000/api-docs`
 - **认证方式**: JWT Bearer Token
@@ -12,6 +13,7 @@
 - **编码**: UTF-8
 
 ### 响应格式规范
+
 ```typescript
 // 成功响应
 interface SuccessResponse<T> {
@@ -1725,21 +1727,25 @@ const editCard = (card: any) => {
 ## 📝 最佳实践
 
 ### 1. 错误处理
+
 - 统一的错误响应处理
 - 用户友好的错误提示
 - 网络错误重试机制
 
 ### 2. 加载状态
+
 - 全局加载状态管理
 - 组件级加载指示器
 - 骨架屏加载效果
 
 ### 3. 缓存策略
+
 - API响应缓存
 - 分页数据管理
 - 乐观更新
 
 ### 4. 类型安全
+
 - 完整的TypeScript类型定义
 - API响应类型验证
 - 运行时类型检查
