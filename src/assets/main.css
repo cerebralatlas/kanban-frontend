@@ -1,62 +1,90 @@
 @import './base.css';
 
-/* 全局样式增强 */
+/* Notion 风格全局样式 */
 body {
-  @apply font-sans text-gray-900 bg-gray-50;
+  @apply font-sans text-text-primary bg-background-secondary;
 }
 
-/* 全局滚动条样式 */
+/* Notion 风格滚动条 */
 ::-webkit-scrollbar {
   @apply w-1.5 h-1.5;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 rounded;
+  @apply bg-background-tertiary rounded;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded hover:bg-gray-400 transition-colors;
+  @apply bg-border-medium rounded hover:bg-border-dark transition-colors duration-150;
 }
 
-/* 链接样式 */
+/* Notion 风格链接 */
 a {
-  @apply text-green-600 hover:text-green-700 transition-colors;
+  @apply text-status-blue-text hover:text-status-blue-dark transition-colors duration-150 ease-notion;
 }
 
-/* Naive UI 组件样式增强 */
+/* Naive UI 组件 Notion 风格增强 */
 .n-button {
-  @apply transition-all duration-200;
+  @apply transition-all duration-150 ease-notion;
 }
 
 .n-input {
-  @apply transition-all duration-200;
+  @apply transition-all duration-150 ease-notion;
 }
 
 .n-card {
-  @apply transition-all duration-200;
+  @apply transition-all duration-150 ease-notion shadow-card hover:shadow-card-hover;
 }
 
 .n-form-item {
   @apply mb-4;
 }
 
-/* 自定义工具类 */
-.glass-effect {
-  @apply bg-white/95 backdrop-blur-sm;
+/* Notion 风格自定义工具类 */
+.notion-glass {
+  @apply bg-background-primary/95 backdrop-blur-sm border border-border-light;
 }
 
-.gradient-bg {
-  @apply bg-gradient-to-br from-blue-500 to-purple-600;
+.notion-gradient-bg {
+  @apply bg-gradient-to-br from-background-secondary to-background-tertiary;
 }
 
-.green-gradient {
-  @apply bg-gradient-to-br from-green-500 to-green-600;
+.notion-primary-gradient {
+  @apply bg-gradient-to-br from-status-blue-medium to-status-blue-dark;
 }
 
-.shadow-soft {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.notion-success-gradient {
+  @apply bg-gradient-to-br from-status-green-medium to-status-green-dark;
 }
 
-.shadow-strong {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+/* Notion 风格阴影 */
+.notion-shadow-soft {
+  @apply shadow-card;
+}
+
+.notion-shadow-strong {
+  @apply shadow-card-hover;
+}
+
+/* Notion 风格卡片 */
+.notion-card {
+  @apply bg-card-background border border-card-border rounded-lg shadow-card hover:shadow-card-hover transition-all duration-150 ease-notion;
+}
+
+.notion-card-hover {
+  @apply hover:bg-card-hover;
+}
+
+/* Notion 风格按钮 */
+.notion-button-primary {
+  @apply bg-status-blue-dark text-text-white hover:bg-status-blue-text transition-all duration-150 ease-notion rounded-lg px-4 py-2 font-medium;
+}
+
+.notion-button-secondary {
+  @apply bg-background-hover text-text-primary hover:bg-background-selected border border-border-light transition-all duration-150 ease-notion rounded-lg px-4 py-2 font-medium;
+}
+
+/* Notion 风格输入框 */
+.notion-input {
+  @apply bg-background-primary border border-border-light rounded-md px-3 py-2 text-text-primary placeholder-text-muted focus:border-status-blue-text focus:ring-1 focus:ring-status-blue-light transition-all duration-150 ease-notion;
 }

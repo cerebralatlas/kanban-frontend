@@ -1,8 +1,8 @@
 <template>
-  <div class="max-w-md mx-auto p-8 bg-white rounded-xl shadow-soft">
+  <div class="max-w-md mx-auto p-8 notion-card">
     <div class="text-center mb-8">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-2">登录到 Kanban</h2>
-      <p class="text-sm text-gray-600">使用您的账户登录</p>
+      <h2 class="text-2xl font-semibold text-text-primary mb-2">登录到 Kanban</h2>
+      <p class="text-sm text-text-secondary">使用您的账户登录</p>
     </div>
 
     <n-form
@@ -36,7 +36,7 @@
           <n-checkbox v-model:checked="rememberMe">
             记住我
           </n-checkbox>
-          <n-button text type="primary" class="text-sm">
+          <n-button text type="primary" class="text-sm text-status-blue-text hover:text-status-blue-dark">
             忘记密码？
           </n-button>
         </div>
@@ -56,10 +56,10 @@
       </n-form-item>
     </n-form>
 
-    <div class="text-center mt-6 pt-6 border-t border-gray-200">
-      <p class="text-sm text-gray-600">
+    <div class="text-center mt-6 pt-6 border-t border-border-light">
+      <p class="text-sm text-text-secondary">
         还没有账户？
-        <router-link to="/register" class="text-green-600 hover:text-green-700 font-medium hover:underline">
+        <router-link to="/register" class="text-status-blue-text hover:text-status-blue-dark font-medium hover:underline transition-colors duration-150 ease-notion">
           立即注册
         </router-link>
       </p>

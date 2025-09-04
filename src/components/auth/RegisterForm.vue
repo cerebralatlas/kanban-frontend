@@ -1,17 +1,11 @@
 <template>
-  <div class="max-w-md mx-auto p-8 bg-white rounded-xl shadow-soft">
+  <div class="max-w-md mx-auto p-8 notion-card">
     <div class="text-center mb-8">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-2">创建 Kanban 账户</h2>
-      <p class="text-sm text-gray-600">填写信息以创建您的账户</p>
+      <h2 class="text-2xl font-semibold text-text-primary mb-2">创建 Kanban 账户</h2>
+      <p class="text-sm text-text-secondary">填写信息以创建您的账户</p>
     </div>
 
-    <n-form
-      ref="formRef"
-      :model="form"
-      :rules="rules"
-      size="large"
-      @keydown.enter="handleSubmit"
-    >
+    <n-form ref="formRef" :model="form" :rules="rules" size="large" @keydown.enter="handleSubmit">
       <n-form-item path="email" label="邮箱">
         <n-input
           v-model:value="form.email"
@@ -40,13 +34,13 @@
           @input="updatePasswordStrength"
         />
         <div class="mt-2 flex items-center gap-2">
-          <div class="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden">
+          <div class="flex-1 h-1 bg-background-tertiary rounded-full overflow-hidden">
             <div
-              class="h-full transition-all duration-300 rounded-full"
+              class="h-full transition-all duration-250 ease-notion rounded-full"
               :class="{
-                'bg-red-500': passwordStrength.class === 'weak',
-                'bg-yellow-500': passwordStrength.class === 'medium',
-                'bg-green-500': passwordStrength.class === 'strong'
+                'bg-status-red-dark': passwordStrength.class === 'weak',
+                'bg-status-yellow-dark': passwordStrength.class === 'medium',
+                'bg-status-green-dark': passwordStrength.class === 'strong',
               }"
               :style="{ width: passwordStrength.width }"
             ></div>
@@ -54,9 +48,9 @@
           <span
             class="text-xs font-medium"
             :class="{
-              'text-red-500': passwordStrength.class === 'weak',
-              'text-yellow-500': passwordStrength.class === 'medium',
-              'text-green-500': passwordStrength.class === 'strong'
+              'text-status-red-text': passwordStrength.class === 'weak',
+              'text-status-yellow-text': passwordStrength.class === 'medium',
+              'text-status-green-text': passwordStrength.class === 'strong',
             }"
           >
             {{ passwordStrength.text }}
@@ -87,11 +81,21 @@
         <n-checkbox v-model:checked="agreeToTerms" :disabled="isRegisterLoading">
           <span class="text-sm">
             我同意
-            <n-button text type="primary" size="small" class="mx-1">
+            <n-button
+              text
+              type="primary"
+              size="small"
+              class="mx-1 text-status-blue-text hover:text-status-blue-dark"
+            >
               用户协议
             </n-button>
             和
-            <n-button text type="primary" size="small" class="mx-1">
+            <n-button
+              text
+              type="primary"
+              size="small"
+              class="mx-1 text-status-blue-text hover:text-status-blue-dark"
+            >
               隐私政策
             </n-button>
           </span>
@@ -112,10 +116,13 @@
       </n-form-item>
     </n-form>
 
-    <div class="text-center mt-6 pt-6 border-t border-gray-200">
-      <p class="text-sm text-gray-600">
+    <div class="text-center mt-6 pt-6 border-t border-border-light">
+      <p class="text-sm text-text-secondary">
         已有账户？
-        <router-link to="/login" class="text-green-600 hover:text-green-700 font-medium hover:underline">
+        <router-link
+          to="/login"
+          class="text-status-blue-text hover:text-status-blue-dark font-medium hover:underline transition-colors duration-150 ease-notion"
+        >
           立即登录
         </router-link>
       </p>
@@ -220,12 +227,14 @@ const rules = {
 }
 
 const canSubmit = computed(() => {
-  return form.email &&
-         form.username &&
-         form.password &&
-         form.confirmPassword &&
-         form.password === form.confirmPassword &&
-         agreeToTerms.value
+  return (
+    form.email &&
+    form.username &&
+    form.password &&
+    form.confirmPassword &&
+    form.password === form.confirmPassword &&
+    agreeToTerms.value
+  )
 })
 
 const updatePasswordStrength = () => {
@@ -278,7 +287,10 @@ const handleSubmit = async () => {
 
     const { confirmPassword, ...registerData } = form
     // confirmPassword is only used for validation, not sent to API
-    console.debug('Form validation passed, confirmPassword matches:', confirmPassword === form.password)
+    console.debug(
+      'Form validation passed, confirmPassword matches:',
+      confirmPassword === form.password,
+    )
     await register(registerData)
   } catch (error) {
     console.error('Register form validation failed:', error)

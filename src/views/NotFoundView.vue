@@ -1,19 +1,19 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center gradient-bg">
+  <div class="min-h-screen flex items-center justify-center notion-gradient-bg">
     <div class="text-center p-8">
-      <div class="bg-white p-12 rounded-3xl shadow-strong max-w-lg">
+      <div class="notion-card p-12 max-w-lg">
         <div class="text-6xl mb-4">🔍</div>
-        <h1 class="text-8xl font-bold text-gray-800 mb-0 leading-none">404</h1>
-        <h2 class="text-2xl text-gray-600 mb-4">页面未找到</h2>
-        <p class="text-gray-500 leading-relaxed mb-8">
+        <h1 class="text-8xl font-bold text-text-primary mb-0 leading-none">404</h1>
+        <h2 class="text-2xl text-text-secondary mb-4">页面未找到</h2>
+        <p class="text-text-muted leading-relaxed mb-8">
           抱歉，您访问的页面不存在或已被移除。
         </p>
 
         <div class="flex gap-4 justify-center">
-          <n-button type="primary" @click="goHome" size="large" class="px-6">
+          <n-button type="primary" @click="goHome" size="large" class="notion-button-primary">
             返回首页
           </n-button>
-          <n-button @click="goBack" size="large" class="px-6">
+          <n-button @click="goBack" size="large" class="notion-button-secondary">
             返回上页
           </n-button>
         </div>
@@ -37,24 +37,29 @@ const goBack = () => {
 }
 </script>
 
-<!-- 响应式设计使用 Tailwind CSS -->
+<!-- Notion 风格响应式设计 -->
 <style scoped>
 /* 移动端响应式调整 */
 @media (max-width: 480px) {
   .p-8 {
-    padding: 1rem;
+    @apply p-4;
   }
 
   .p-12 {
-    padding: 2rem;
+    @apply p-8;
   }
 
   .text-8xl {
-    font-size: 4rem;
+    @apply text-6xl;
   }
 
   .flex.gap-4 {
     flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .max-w-lg {
+    @apply max-w-sm;
   }
 }
 </style>

@@ -22,7 +22,7 @@ import {
   NLoadingBarProvider,
   NDialogProvider,
   NNotificationProvider,
-  darkTheme
+  darkTheme,
 } from 'naive-ui'
 import { useUIStore } from '@/stores/ui'
 import { useAuth } from '@/composables/useAuth'
@@ -46,12 +46,12 @@ onMounted(async () => {
 })
 </script>
 
-<!-- 全局样式在 main.css 中定义 -->
+<!-- Notion 风格全局样式 -->
 <style>
-/* 全局过渡动画 */
+/* Notion 风格过渡动画 */
 .fade-enter-active,
 .fade-leave-active {
-  @apply transition-opacity duration-300 ease-in-out;
+  @apply transition-opacity duration-250 ease-notion;
 }
 
 .fade-enter-from,
@@ -61,14 +61,42 @@ onMounted(async () => {
 
 .slide-up-enter-active,
 .slide-up-leave-active {
-  @apply transition-all duration-300 ease-in-out;
+  @apply transition-all duration-250 ease-notion;
 }
 
 .slide-up-enter-from {
-  @apply translate-y-5 opacity-0;
+  @apply translate-y-1 opacity-0;
 }
 
 .slide-up-leave-to {
-  @apply -translate-y-5 opacity-0;
+  @apply -translate-y-1 opacity-0;
+}
+
+/* Notion 风格滑动动画 */
+.slide-down-enter-active,
+.slide-down-leave-active {
+  @apply transition-all duration-250 ease-notion;
+}
+
+.slide-down-enter-from {
+  @apply -translate-y-1 opacity-0;
+}
+
+.slide-down-leave-to {
+  @apply translate-y-1 opacity-0;
+}
+
+/* Notion 风格缩放动画 */
+.scale-enter-active,
+.scale-leave-active {
+  @apply transition-all duration-150 ease-notion;
+}
+
+.scale-enter-from {
+  @apply scale-95 opacity-0;
+}
+
+.scale-leave-to {
+  @apply scale-95 opacity-0;
 }
 </style>
